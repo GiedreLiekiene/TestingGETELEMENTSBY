@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        .investies-laukas {
+            border: thick double #32a1ce;
+        }
+    </style>
+<body>
+Operatorius: 
+<input type="radio" name="Bite" value="BB"/>Bite
+<input type="radio" name="Tele2" value="TT"/>Tele2<br/>
+Asmens kodas: <input class="investies-laukas" id="asmens-kodo-laukas" /><br/>
+Telefonas: <input class="investies-laukas" id="telefono-laukas" value="+370" /><br/>
+<button onclick="console.log(`clear`); clear1()">Clear</button>
+<button onclick="authorize()">Authorize</button>
+<p style="color: red" id="error-message"></p>
+<script>
+function authorize() {
+  let telefonoNumeris = document.getElementById("telefono-laukas").value
+  console.log(telefonoNumeris)
+  if (!telefonoNumeris.startsWith("+370")) {
+    document.getElementById("error-message").innerHTML = "Nelietuviskas numeris"
+  } else {
+      // prisingung prie banko
+  }
+  //.innerHTML = "Hello World" + Date();
+}
+function clear1() {
+  let ivestiesLaukai = document.getElementsByTagName("input")
+  console.log(ivestiesLaukai)
+  for (let laukas of ivestiesLaukai) {
+    laukas.value = ""
+  }
+}
+</script>
+</body>
+</html>
